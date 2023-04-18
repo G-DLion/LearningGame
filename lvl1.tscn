@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwxm0mdp04bnc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjo6e"]
+font_size = 27
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 494.0
+offset_top = 193.0
+offset_right = 671.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "ПРИВЕТ VUC"
+label_settings = SubResource("LabelSettings_hjo6e")
