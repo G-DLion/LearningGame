@@ -5,3 +5,5 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_xp2hy")]
+position = Vector2(104, 217)
+scale = Vector2(0.2, 0.2)
