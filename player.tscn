@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bao5ehxocqs0x"]
+
+[ext_resource type="Texture2D" uid="uid://rjuun8xo4fu0" path="res://Sprites/png-transparent-super-mario-bros-2-new-super-mario-bros-wii-sprite-nintendo-luigi-mario-bros.png" id="1_b7ax1"]
+[ext_resource type="Script" path="res://player.gd" id="1_eljsj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4trh3"]
+radius = 157.0
+height = 472.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2qpt"]
+radius = 55.5428
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_om5xk"]
+radius = 42.19
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_spd71"]
+radius = 52.7731
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_eljsj")
+
+[node name="Png-transparent-super-mario-bros-2-new-super-mario-bros-wii-sprite-nintendo-luigi-mario-bros" type="Sprite2D" parent="."]
+texture = ExtResource("1_b7ax1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_4trh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D"]
+position = Vector2(-95, 173)
+shape = SubResource("CircleShape2D_w2qpt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionShape2D"]
+position = Vector2(102, 171)
+shape = SubResource("CircleShape2D_om5xk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionShape2D"]
+position = Vector2(98, -178)
+shape = SubResource("CircleShape2D_spd71")
