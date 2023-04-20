@@ -17,9 +17,13 @@ radius = 42.19
 radius = 52.7731
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(120, -184)
 script = ExtResource("1_eljsj")
+metadata/_edit_group_ = true
+metadata/_edit_vertical_guides_ = []
+metadata/_edit_horizontal_guides_ = []
 
-[node name="Png-transparent-super-mario-bros-2-new-super-mario-bros-wii-sprite-nintendo-luigi-mario-bros" type="Sprite2D" parent="."]
+[node name="characterSprite" type="Sprite2D" parent="."]
 position = Vector2(105, 511)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_b7ax1")

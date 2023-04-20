@@ -1,20 +1,26 @@
 extends CharacterBody2D
 
-var speed = 50
-var jampForce = 500
+var speed = 500
+var jampForce = 1500
 var gravity = 700
 
 var input = Vector2.ZERO
 
-func _physics_process(delta):
+func _ready():
+	pass
+	
+	
+	
+
+func _physics_process(delta): 
 	move_player(delta)
+	if velocity.x < -0.1:
+		$characterSprite.flip_h = true
+		print("flip")
+	elif velocity.x > 0.1:
+		$characterSprite.flip_h = false
+	print(velocity.x)
 
-@onready var player = get_node("path/to/Player")
-
-	if vel.x < 0:
-		imagePlayer.flip_h = true
-	elif vel.x > 0:
-		imagePlayer.flip_h = false
 
 func get_input():
 	input.x = int(Input.is_action_pressed("Player_Rihgt")) - int(Input.is_action_pressed("Player_Left"))
@@ -24,8 +30,6 @@ func get_input():
 func move_player(delta):
 	input = get_input()
 	
-	print(velocity.length())
-	
 	if input == Vector2.ZERO:
 		if  velocity.length() * delta > (20 * delta):
 			velocity -= velocity.normalized() * delta * speed
@@ -34,6 +38,7 @@ func move_player(delta):
 	else:
 		velocity += input * delta * speed
 		velocity = velocity.limit_length(speed)
+		
 	
 	move_and_slide()
 	
