@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 400
+var speed = 50
 var jampForce = 500
 var gravity = 700
 
@@ -9,10 +9,17 @@ var input = Vector2.ZERO
 func _physics_process(delta):
 	move_player(delta)
 
-	
+@onready var player = get_node("path/to/Player")
+
+	if vel.x < 0:
+		imagePlayer.flip_h = true
+	elif vel.x > 0:
+		imagePlayer.flip_h = false
+
 func get_input():
 	input.x = int(Input.is_action_pressed("Player_Rihgt")) - int(Input.is_action_pressed("Player_Left"))
 	return input.normalized()
+	
 
 func move_player(delta):
 	input = get_input()
