@@ -1,14 +1,14 @@
 2a60927148abd1d33b818b535e306557
-::res://::1681937691
+::res://::1681999963
 asdrqw.txt::TextFile::-1::1681936950::0::1::::<><>::
 GRNDVD.txt::TextFile::-1::1681936506::0::1::::<><>::
 icon.svg::CompressedTexture2D::7513888495261935091::1681936506::1681937692::1::::<><>::
 lvl1.tscn::PackedScene::3978829816464704472::1681936899::0::1::::<><>::
-node_2d.tscn::PackedScene::4009533697219203153::1681937683::0::1::::<><>::uid://bao5ehxocqs0x
-player.gd::GDScript::-1::1681937683::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::2417151029041923153::1681937683::0::1::::<><>::uid://rjuun8xo4fu0<>res://player.gd
+node_2d.tscn::PackedScene::4009533697219203153::1681939026::0::1::::<><>::uid://bao5ehxocqs0x
+player.gd::GDScript::-1::1681938988::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::2417151029041923153::1681939017::0::1::::<><>::uid://rjuun8xo4fu0<>res://player.gd
 README.md::TextFile::-1::1681936506::0::1::::<><>::
 Новый текстовый документ.txt::TextFile::-1::1681937683::0::1::::<><>::
-::res://Sprites/::1681937683
+::res://Sprites/::1681937692
 kisspng-angle-brand-pixel-art-5aced81a509697.png::CompressedTexture2D::5180471262208417630::1681937683::1681937692::1::::<><>::
 png-transparent-super-mario-bros-2-new-super-mario-bros-wii-sprite-nintendo-luigi-mario-bros.png::CompressedTexture2D::1213040532213483069::1681937683::1681937692::1::::<><>::
