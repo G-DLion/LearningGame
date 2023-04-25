@@ -1,45 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://bao5ehxocqs0x"]
+[gd_scene load_steps=4 format=3 uid="uid://bao5ehxocqs0x"]
 
 [ext_resource type="Texture2D" uid="uid://rjuun8xo4fu0" path="res://Sprites/png-transparent-super-mario-bros-2-new-super-mario-bros-wii-sprite-nintendo-luigi-mario-bros.png" id="1_b7ax1"]
 [ext_resource type="Script" path="res://player.gd" id="1_eljsj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4trh3"]
-radius = 157.0
-height = 472.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_w2qpt"]
-radius = 55.5428
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_om5xk"]
-radius = 42.19
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_spd71"]
-radius = 52.7731
+radius = 67.0
+height = 218.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(120, -184)
+position = Vector2(400, 261)
 script = ExtResource("1_eljsj")
 metadata/_edit_group_ = true
 metadata/_edit_vertical_guides_ = []
 metadata/_edit_horizontal_guides_ = []
 
 [node name="characterSprite" type="Sprite2D" parent="."]
-position = Vector2(105, 511)
+position = Vector2(0, -3)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_b7ax1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(105, 510)
+position = Vector2(6.25, -1.5)
 shape = SubResource("CapsuleShape2D_4trh3")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(10, 683)
-shape = SubResource("CircleShape2D_w2qpt")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(207, 681)
-shape = SubResource("CircleShape2D_om5xk")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2(203, 332)
-shape = SubResource("CircleShape2D_spd71")
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5, 4)
+zoom = Vector2(1.5, 1.5)
+process_callback = 0
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 640
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

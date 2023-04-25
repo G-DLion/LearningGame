@@ -1,48 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxeio06ry4lr2"]
+[gd_scene load_steps=5 format=3 uid="uid://bxeio06ry4lr2"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_78ge7"]
 [ext_resource type="PackedScene" uid="uid://bao5ehxocqs0x" path="res://player.tscn" id="1_xp2hy"]
 [ext_resource type="Texture2D" uid="uid://dfb1v7psm87x4" path="res://icon.svg" id="3_3qobg"]
+[ext_resource type="PackedScene" uid="uid://cox2ebksptatp" path="res://floor.tscn" id="4_88n7q"]
 
 [node name="Node2D" type="Node2D"]
+z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_78ge7")
 
 [node name="Player" parent="." instance=ExtResource("1_xp2hy")]
-position = Vector2(104, 217)
-scale = Vector2(0.2, 0.2)
+position = Vector2(536, 263)
+scale = Vector2(0.3, 0.3)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(25, 590)
-scale = Vector2(5, 5)
-zoom = Vector2(2, 2)
-process_callback = 0
-limit_smoothed = true
-position_smoothing_enabled = true
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2(106.666, 530)
+zoom = Vector2(1.5, 1.5)
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(63, 500)
+position = Vector2(574, 632)
+scale = Vector2(8.98438, 0.203125)
 texture = ExtResource("3_3qobg")
 
 [node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(197, 503)
+position = Vector2(574, 0)
+scale = Vector2(8.98438, 0.203125)
 texture = ExtResource("3_3qobg")
 
 [node name="Icon3" type="Sprite2D" parent="."]
-position = Vector2(345, 500)
+position = Vector2(1156, 332)
+rotation = 1.57996
+scale = Vector2(4.88095, 0.168752)
 texture = ExtResource("3_3qobg")
 
 [node name="Icon4" type="Sprite2D" parent="."]
-position = Vector2(491, 500)
+position = Vector2(3, 319)
+rotation = 1.57996
+scale = Vector2(5.22944, 0.169329)
 texture = ExtResource("3_3qobg")
 
-[node name="Icon5" type="Sprite2D" parent="."]
-position = Vector2(648, 498)
-texture = ExtResource("3_3qobg")
+[node name="StaticBody2D" parent="." instance=ExtResource("4_88n7q")]
+position = Vector2(318, 139)
+scale = Vector2(0.183945, 1.35917)
 
-[node name="Icon6" type="Sprite2D" parent="."]
-position = Vector2(810, 502)
-texture = ExtResource("3_3qobg")
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
-[node name="Icon7" type="Sprite2D" parent="."]
-position = Vector2(956, 502)
-texture = ExtResource("3_3qobg")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2(94, 62)
+polygon = PackedVector2Array(567, -47, 1048, -50, 1048, 549, -80, 560, -79, 585, 1064, 582, 1073, -58, 1037, -85, -100, -75, -112, 591, -83, 591, -82.9048, 560.213, -81, -56)

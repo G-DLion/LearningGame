@@ -1,10 +1,11 @@
 2a60927148abd1d33b818b535e306557
-::res://::1682013694
-git_1.txt::TextFile::-1::1681936950::0::1::::<><>::
+::res://::1682416257
+git_2.txt::TextFile::-1::1681936950::0::1::::<><>::
 icon.svg::CompressedTexture2D::7513888495261935091::1681936506::1682013695::1::::<><>::
-node_2d.tscn::PackedScene::4009533697219203153::1682001886::0::1::::<><>::uid://bao5ehxocqs0x
-player.gd::GDScript::-1::1682013685::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::2417151029041923153::1682013685::0::1::::<><>::uid://rjuun8xo4fu0<>res://player.gd
+node_2d.gd::GDScript::-1::1682014180::0::1::::<>Node2D<>::
+node_2d.tscn::PackedScene::4009533697219203153::1682017168::0::1::::<><>::res://node_2d.gd<>uid://bao5ehxocqs0x<>uid://dfb1v7psm87x4
+player.gd::GDScript::-1::1682016017::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::2417151029041923153::1682017100::0::1::::<><>::uid://rjuun8xo4fu0<>res://player.gd
 README.md::TextFile::-1::1681936506::0::1::::<><>::
 ::res://Sprites/::1681937692
 kisspng-angle-brand-pixel-art-5aced81a509697.png::CompressedTexture2D::5180471262208417630::1681937683::1681937692::1::::<><>::
