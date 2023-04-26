@@ -1,4 +1,6 @@
-res://player.tscn
-res://player.gd
 res://node_2d.tscn
+res://Area2D.gd
+res://cam.gd
+res://player.tscn
 res://floor.tscn
+res://player.gd

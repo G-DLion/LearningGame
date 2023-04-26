@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxeio06ry4lr2"]
+[gd_scene load_steps=8 format=3 uid="uid://bxeio06ry4lr2"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_78ge7"]
 [ext_resource type="PackedScene" uid="uid://bao5ehxocqs0x" path="res://player.tscn" id="1_xp2hy"]
 [ext_resource type="Texture2D" uid="uid://dfb1v7psm87x4" path="res://icon.svg" id="3_3qobg"]
 [ext_resource type="PackedScene" uid="uid://cox2ebksptatp" path="res://floor.tscn" id="4_88n7q"]
+[ext_resource type="Script" path="res://Area2D.gd" id="5_ket8w"]
+[ext_resource type="Script" path="res://cam.gd" id="6_3i4i3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk8sr"]
+size = Vector2(177, 156)
 
 [node name="Node2D" type="Node2D"]
 z_as_relative = false
@@ -13,10 +18,6 @@ script = ExtResource("1_78ge7")
 [node name="Player" parent="." instance=ExtResource("1_xp2hy")]
 position = Vector2(536, 263)
 scale = Vector2(0.3, 0.3)
-
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-position = Vector2(106.666, 530)
-zoom = Vector2(1.5, 1.5)
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(574, 632)
@@ -41,7 +42,7 @@ scale = Vector2(5.22944, 0.169329)
 texture = ExtResource("3_3qobg")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("4_88n7q")]
-position = Vector2(318, 139)
+position = Vector2(310, 147)
 scale = Vector2(0.183945, 1.35917)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -49,3 +50,19 @@ scale = Vector2(0.183945, 1.35917)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
 position = Vector2(94, 62)
 polygon = PackedVector2Array(567, -47, 1048, -50, 1048, 549, -80, 560, -79, 585, 1064, 582, 1073, -58, 1037, -85, -100, -75, -112, 591, -83, 591, -82.9048, 560.213, -81, -56)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_ket8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(309, 159)
+shape = SubResource("RectangleShape2D_nk8sr")
+
+[node name="cam2" type="Camera2D" parent="."]
+position = Vector2(572, 299)
+script = ExtResource("6_3i4i3")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="change_cam" from="Area2D" to="cam2" method="_on_area_2d_change_cam"]
+[connection signal="return_cam" from="Area2D" to="Player" method="_on_area_2d_return_cam"]

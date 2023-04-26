@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
+
 var speed = 500
 var jampForce = 1500
 var gravity = 700
+var velocityLimit = 200
+
+var toggle = true
+var toggle2 = true
 
 var input = Vector2.ZERO
 
@@ -33,13 +38,33 @@ func move_player(delta):
 	
 	if input == Vector2.ZERO:
 		if  velocity.length() * delta > (20 * delta):
-			velocity -= velocity.normalized() * delta * speed
+			velocity -= velocity.normalized() * delta * speed*2
 		else:
 			velocity = Vector2.ZERO
 	else:
-		velocity += input * delta * speed
-		velocity = velocity.limit_length(speed/2)
+		velocity += input * delta * speed*2
+		velocity = velocity.limit_length(velocityLimit)
+	if Input.is_action_pressed("flash") and toggle == true:
+		print(toggle)
+		if toggle:
+			velocity += input * delta * speed*1000
+			velocityLimit += 30000
+			toggle =  false
+		velocityLimit = 200
+	if Input.is_action_just_released("flash"):
+		if toggle2:
+			$Timer.start(4)
+			toggle2 = false
 		
-	
+	print($Timer.time_left)
 	move_and_slide()
 	
+
+
+func _on_area_2d_return_cam():
+	$Camera2D.make_current()
+
+
+func _on_timer_timeout():
+	toggle = true
+	toggle2 = true
